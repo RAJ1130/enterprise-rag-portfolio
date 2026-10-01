@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  enterprise-rag:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: enterprise-rag-app
+    restart: unless-stopped
+    ports:
+      - "8008:8008"
+    environment:
+      - PORT=8008
+      - LLM_PROVIDER=gemini # or "ollama" or "local_simulated"
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMINI_MODEL=gemini-2.5-flash
+      - SIMILARITY_THRESHOLD=0.30
+      - TOP_K=4
+    volumes:
+      # Persistent storage for uploaded enterprise documents and vector database
+      - rag_documents:/app/backend/data/documents
+      - rag_vector_db:/app/backend/data/vector_db
+
+volumes:
+  rag_documents:
+  rag_vector_db:

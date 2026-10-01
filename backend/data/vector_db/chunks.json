@@ -1,0 +1,725 @@
+[
+  {
+    "chunk_id": "4cb37c63_test_travel_policy.txt_p1_c0",
+    "doc_id": "4cb37c63_test_travel_policy.txt",
+    "doc_name": "test_travel_policy.txt",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "Corporate Travel & Expense Compliance Policy:\nAll domestic flights must be booked at least 14 days in advance in Economy class. Hotel reimbursement is capped at 250 dollars per night. Meals are reimbursed up to 75 dollars daily per diem.",
+    "char_count": 237,
+    "token_estimate": 59,
+    "metadata": {
+      "file_type": ".txt"
+    },
+    "created_at": 1790790513.9785633
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c0",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "# 🩺 Smart Health System\n\nA full-stack healthcare application:\n- **Backend:** Django 5 + Django REST Framework + JWT auth (SQLite by default, Postgres-ready)\n- **Frontend:** React 18 (React Router, Axios, Context API, Recharts, Lucide icons)\n\nRoles: **Patient** and **Doctor**, each with a tailored dashboard.\nFeatures: registration/login, doctor directory, appointment booking, appointment status\nmanagement (confirm/complete/cancel), and medical records.\n\n## Design system",
+    "char_count": 473,
+    "token_estimate": 118,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.641915
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c1",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 1,
+    "content": "stration/login, doctor directory, appointment booking, appointment status\nmanagement (confirm/complete/cancel), and medical records.\n\n## Design system ... The v2 frontend uses a deliberate visual identity instead of a generic admin-panel look:\n- **Palette:** warm paper background, deep pine-green sidebar, clinical teal accent, muted gold and rust for status states\n- **Type:** Newsreader (serif) for headings — reads like a medical record — paired with IBM Plex Sans for UI text and IBM Plex Mono for numeric data (fees, times)\n- **Layout:** fixed dark sidebar navigation, a dashboard hero panel for the next appointment, a Recharts activity trend, and timeline-style (not card-grid) views for appointments and records\n\n---\n\n## 📁 Project Structure",
+    "char_count": 749,
+    "token_estimate": 187,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.6419256
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c2",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 2,
+    "content": "or the next appointment, a Recharts activity trend, and timeline-style (not card-grid) views for appointments and records\n\n---\n\n## 📁 Project Structure ... ```\nsmart-health-system/\n├── backend/\n│   ├── manage.py\n│   ├── requirements.txt\n│   ├── .env.example\n│   ├── smart_health/        # Django project (settings, urls)\n│   ├── accounts/            # Custom user model + JWT auth endpoints\n│   └── healthcare/          # Doctors, patients, appointments, medical records\n└── frontend/\n    ├── package.json\n    ├── public/index.html\n    └── src/\n        ├── api/axios.js       # Axios instance w/ JWT interceptor\n        ├── context/AuthContext.js\n        ├── components/        # Sidebar, ProtectedRoute\n        ├── pages/              # Login, Register, Dashboard, Doctors, Appointments, Records\n        ├── App.js\n        └── index.css           # Design tokens + component styles\n```\n\n---\n\n## 🖥️ Running this locally in VS Code",
+    "char_count": 929,
+    "token_estimate": 232,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.6419291
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c3",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 3,
+    "content": "ntments, Records\n        ├── App.js\n        └── index.css           # Design tokens + component styles\n```\n\n---\n\n## 🖥️ Running this locally in VS Code ... ### 0. Prerequisites\n- **Python 3.11+**\n- **Node.js 18+** and npm\n- **VS Code** with the Python extension (Microsoft)\n\n### 1. Open the project\n`File → Open Folder…` → select `smart-health-system`.\n\n### 2. Backend (Django) — Terminal 1\n\n```bash\ncd backend\npython -m venv venv\nsource venv/bin/activate        # Windows: venv\\Scripts\\activate\npip install -r requirements.txt\ncp .env.example .env            # Windows: copy .env.example .env\npython manage.py makemigrations\npython manage.py migrate\npython manage.py createsuperuser\npython manage.py runserver\n```\nRuns at **http://127.0.0.1:8000** — admin at **http://127.0.0.1:8000/admin/**\n\n> In VS Code, select the `venv` interpreter from the bottom status bar so imports resolve.\n\n### 3. Frontend (React) — Terminal 2",
+    "char_count": 921,
+    "token_estimate": 230,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.6419313
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c4",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 4,
+    "content": ".0.0.1:8000/admin/**\n\n> In VS Code, select the `venv` interpreter from the bottom status bar so imports resolve.\n\n### 3. Frontend (React) — Terminal 2 ... ```bash\ncd frontend\nnpm install\nnpm start\n```\nOpens **http://localhost:3000** automatically, already wired to the Django API.\n\n### 4. Try it\n1. Register a **Doctor** account and a **Patient** account at `/register`.\n2. As the doctor, fill in their profile via `/admin/healthcare/doctorprofile/add/` (specialization, fee, etc.) — this admin step is the one manual piece; see \"Next steps\" below to replace it with a form.\n3. As the patient, go to **Doctors** and book an appointment.\n4. As the doctor, confirm/complete it under **Appointments**, then add a **Medical Record**.\n\n---\n\n## 🔀 Pushing this to your own GitHub repo\n\nThis project already has a local git repo with an initial commit. To push it to your own\nGitHub:",
+    "char_count": 875,
+    "token_estimate": 218,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.641933
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c5",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 5,
+    "content": "d**.\n\n---\n\n## 🔀 Pushing this to your own GitHub repo\n\nThis project already has a local git repo with an initial commit. To push it to your own\nGitHub: ... ```bash\n# 1. Create an empty repo on GitHub first (no README/gitignore), then:\ncd smart-health-system\ngit remote add origin https://github.com/<your-username>/<your-repo-name>.git\ngit push -u origin main\n```\n\nIf GitHub asks for a password, use a **Personal Access Token** (Settings → Developer\nsettings → Personal access tokens) rather than your account password — GitHub no longer\naccepts account passwords over HTTPS git.\n\nTo keep committing as you build:\n```bash\ngit add -A\ngit commit -m \"Describe what you changed\"\ngit push\n```\n\n---\n\n## 🔌 API Overview\n\nAll endpoints are prefixed with `/api/`. Auth uses JWT (`Authorization: Bearer <token>`).",
+    "char_count": 801,
+    "token_estimate": 200,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.641935
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c6",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 6,
+    "content": "ribe what you changed\"\ngit push\n```\n\n---\n\n## 🔌 API Overview\n\nAll endpoints are prefixed with `/api/`. Auth uses JWT (`Authorization: Bearer <token>`). ... | Endpoint | Method | Description |\n|---|---|---|\n| `/api/auth/register/` | POST | Create a new user (patient or doctor) |\n| `/api/auth/login/` | POST | Get access + refresh tokens |\n| `/api/auth/refresh/` | POST | Refresh an expired access token |\n| `/api/auth/me/` | GET | Get the logged-in user's profile |\n| `/api/doctors/` | GET, POST | List / create doctor profiles |\n| `/api/patients/` | GET, POST | List / create patient profiles (scoped per user) |\n| `/api/appointments/` | GET, POST | List / book appointments (scoped per role) |\n| `/api/appointments/{id}/` | PATCH | Update appointment status |\n| `/api/records/` | GET, POST | List / create medical records |",
+    "char_count": 824,
+    "token_estimate": 206,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.6419375
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c7",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 7,
+    "content": "(scoped per role) |\n| `/api/appointments/{id}/` | PATCH | Update appointment status |\n| `/api/records/` | GET, POST | List / create medical records | ... Role-based access is enforced in `healthcare/views.py` — patients only see their own\ndata; doctors only see their own patients/appointments/records.\n\n---\n\n## 🗄️ Switching to PostgreSQL (optional)\n\n1. `pip install psycopg2-binary`\n2. In `backend/smart_health/settings.py`, swap the SQLite `DATABASES` block for the\n   commented Postgres one.\n3. Add `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT` to `.env`.\n4. `python manage.py migrate`\n\n---",
+    "char_count": 605,
+    "token_estimate": 151,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.6419413
+  },
+  {
+    "chunk_id": "2ceb3d99_README.md_p1_c8",
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "page_number": 1,
+    "chunk_index": 8,
+    "content": "lock for the\n   commented Postgres one.\n3. Add `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT` to `.env`.\n4. `python manage.py migrate`\n\n--- ... ## 🚀 Suggested next steps\n- Replace the admin-panel doctor-profile step with an in-app \"Complete your profile\" form\n- Add email notifications for appointment confirmations\n- Add file uploads for lab reports (`MEDIA_URL` is already wired up)\n- Deploy backend (Render/Railway) + frontend (Vercel/Netlify); update `API_BASE_URL` in `src/api/axios.js`\n\nBuilt with Django REST Framework + React. Happy coding! 🎉",
+    "char_count": 561,
+    "token_estimate": 140,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790792229.641943
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p1_c0",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "1\nNetflix,\nInc.\nCorporate\nGovernance\nGuidelines\n(Amended\nand\nRestated\nJuly\n23,\n2025)\nThe\nBoard\nof\nDirectors\n(the\n“Board”)\nof\nNetflix,\nInc.\n(the\n“Company”)\nhas\nadopted\nthese\ncorporate\ngovernance\nguidelines\n(the\n“Guidelines”)\nto\nprovide\na\nflexible\nframework\npursuant\nto\nwhich\nthe\nBoard\noversees\nthe\nCompany’s\nbusiness\nin\naccordance\nwith\nits\nfiduciary\nresponsibilities.\nThese\nGuidelines\nshould\nbe\ninterpreted\nin\nthe\ncontext\nof\napplicable\nlaw,\nand\nthe\nCompany’s\namended\nand\nrestated\ncertificate\nof\nincorporation\n(the\n“Charter”),\namended\nand\nrestated\nbylaws\n(the\n“Bylaws”),\nand\nthe\ncharters\nof\nthe\ncommittees\nof\nthe\nBoard.\nThese\nGuidelines\nshall\nbe\nreviewed\nperiodically\nby\nthe\nNominating\nand\nGovernance\nCommittee\nand\nthe\nBoard\nwill\nmake\nappropriate\nchanges\nbased\non\nrecommendations\nof\nthe\nNominating\nand",
+    "char_count": 799,
+    "token_estimate": 199,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1575863
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p1_c1",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 1,
+    "chunk_index": 1,
+    "content": "wed\nperiodically\nby\nthe\nNominating\nand\nGovernance\nCommittee\nand\nthe\nBoard\nwill\nmake\nappropriate\nchanges\nbased\non\nrecommendations\nof\nthe\nNominating\nand ... wed\nperiodically\nby\nthe\nNominating\nand\nGovernance\nCommittee\nand\nthe\nBoard\nwill\nmake\nappropriate\nchanges\nbased\non\nrecommendations\nof\nthe\nNominating\nand ... Governance\nCommittee.\nI.\nThe\nRole\nof\nthe\nBoard\nof\nDirectors\nThe\nprimary\nduty\nof\nthe\nBoard\nis\nto\noversee\nmanagement\nof\nthe\nCompany\nand\nhelp\nassure\nthat\nthe\nlong-term\ninterests\nof\nstockholders\nare\nserved.\nThe\nBoard\nmonitors\nperformance,\nreviews\nand\napproves\nstrategy,\nand\nif\nappropriate,\napproves\nsignificant\ntransactions.\nThe\nBoard\nevaluates\nthe\nperformance\nof\nchief\nexecutive\nofficer(s),\nas\nwell\nas\noversees\nmanagement\nsuccession\nplanning.\nThe\nBoard\noversees\nrisk\nmanagement,\nincluding\noverall\nenterprise,\nstrategic,\noperational,\nfinancial\nand\nlegal\nrisks.\nThe\nBoard\nexecutes\nthis\noversight\ndirectly\nand\nthrough\nits\ncommittees,\nwhich\nreport\nregularly\nto\nthe\nBoard.\nEach\ncommittee’s\nareas\nof\noversight\nare\ndescribed\nin\nits\ncharter.\nII.\nBoard\nStructure\nand\nComposition\nA.\nSize\nof\nthe\nBoard.\nIn",
+    "char_count": 1101,
+    "token_estimate": 275,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1575935
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p1_c2",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 1,
+    "chunk_index": 2,
+    "content": "regularly\nto\nthe\nBoard.\nEach\ncommittee’s\nareas\nof\noversight\nare\ndescribed\nin\nits\ncharter.\nII.\nBoard\nStructure\nand\nComposition\nA.\nSize\nof\nthe\nBoard.\nIn ... regularly\nto\nthe\nBoard.\nEach\ncommittee’s\nareas\nof\noversight\nare\ndescribed\nin\nits\ncharter.\nII.\nBoard\nStructure\nand\nComposition\nA.\nSize\nof\nthe\nBoard.\nIn ... accordance\nwith\nthe\nBylaws,\nthe\nauthorized\nnumber\nof\ndirectors\nof\nthe\nCompany\nshall\nbe\nfixed\nfrom\ntime\nto\ntime\nexclusively\nby\nthe\nBoard\npursuant\nto\na\nresolution\nduly\nadopted\nby\na\nmajority\nof\nthe\nBoard\nmembers\nthen\nin\noffice.\nB.\nDirector\nIndependence.\nThe\nBoard\nshall\nconsist\nof\nat\nleast\na\nmajority\nof\nindependent\ndirectors\nwho\nmeet\nthe\nindependence\nrequirements\nof\nThe\nNasdaq\nStock\nMarket\n(“Nasdaq”),\nand\nany\nadditional\nrequirements\nthat\nthe\nBoard\ndeems\nappropriate.\nThe\nBoard\nshall\ndetermine\nthe\nindependence\nof\neach\ndirector\nannually,\nbased\nupon\nthe\nrecommendation\nof\nthe\nNominating\nand\nGovernance\nCommittee.\nC.\nBoard\nLeadership.\nThe\nBoard\nevaluates\nthe\nleadership\nstructure\nof\nthe\nBoard,\nincluding\nwhether\nthe\nroles\nof\nchairperson\nof\nthe\nBoard\nand\nChief\nExecutive\nOfficer(s)\nshould\nbe\nseparate.",
+    "char_count": 1107,
+    "token_estimate": 276,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.157596
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p1_c3",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 1,
+    "chunk_index": 3,
+    "content": "ates\nthe\nleadership\nstructure\nof\nthe\nBoard,\nincluding\nwhether\nthe\nroles\nof\nchairperson\nof\nthe\nBoard\nand\nChief\nExecutive\nOfficer(s)\nshould\nbe\nseparate. ... ates\nthe\nleadership\nstructure\nof\nthe\nBoard,\nincluding\nwhether\nthe\nroles\nof\nchairperson\nof\nthe\nBoard\nand\nChief\nExecutive\nOfficer(s)\nshould\nbe\nseparate. ... The\nBoard\nbelieves\nthis\napproach\nprovides\nnecessary\nflexibility\nto\ndetermine\nwhat\nit\nbelieves\nto\nbe\nthe\nappropriate\nleadership\nstructure\nat\nany\ngiven\npoint\nin\ntime.\nIn\nthe\nevent\nthe\nchairperson\nof\nthe\nBoard\nis\nnot\nan\nindependent\ndirector,\nthe\nindependent\ndirectors\nwill\ndesignate\none\nof\nthe\nindependent\ndirectors\nas\nlead\nindependent\ndirector\nto\nserve\nuntil\nreplaced\nby\nthe\nBoard\n(the\n“Lead\nIndependent\nDirector”).\nIf\nthe\nBoard\nchairperson\nis\nan\nindependent\ndirector,\nthe\nBoard\nmay\ndetermine\nwhether\nit\nis\nappropriate\nto\nappoint\na\nLead\nIndependent\nDirector.\nIf\nthe\nBoard\nelects\na\nLead\nIndependent\nDirector,\nsuch\nLead\nIndependent\nDirector\nwill\nbe\nlisted\nin\nthe\nCompany’s\nproxy\nstatement\nand\nwill\ninclude\nthe\nfollowing\nresponsibilities:\n●\ncoordinating\nthe\nactivities\nof\nthe\nindependent\ndirectors,\nand",
+    "char_count": 1107,
+    "token_estimate": 276,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1575978
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p1_c4",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 1,
+    "chunk_index": 4,
+    "content": "sted\nin\nthe\nCompany’s\nproxy\nstatement\nand\nwill\ninclude\nthe\nfollowing\nresponsibilities:\n●\ncoordinating\nthe\nactivities\nof\nthe\nindependent\ndirectors,\nand ... sted\nin\nthe\nCompany’s\nproxy\nstatement\nand\nwill\ninclude\nthe\nfollowing\nresponsibilities:\n●\ncoordinating\nthe\nactivities\nof\nthe\nindependent\ndirectors,\nand ... authorization\nto\ncall\nmeetings\nof\nthe\nindependent\ndirectors;\n●\ncoordinating\nwith\nthe\nChairman,\nChief\nExecutive\nOfficer(s)\nand\nCorporate\nSecretary,\nas\nappropriate,\nin\nhelping\nset\nthe\nagenda\nfor\nBoard\nmeetings,\nincluding\nsuggestions\nfrom\nother\nmembers\nof\nthe\nBoard;\n●\nchairing\nexecutive\nsessions\nof\nthe\nindependent\ndirectors;\n●\nproviding\nfeedback\nand\nperspective\nto\nthe\nChairman\nand\nChief\nExecutive\nOfficer(s)\nabout\ndiscussions\namong\nthe\nindependent\ndirectors;\n●\nhelping\nfacilitate\ncommunication\namong\nthe\nChairman,\nChief\nExecutive\nOfficer(s)\nand\nthe\nindependent\ndirectors;\n●\npresiding\nat\nBoard\nmeetings\nwhere\nthe\nChairman\nis\nnot\npresent;\nand",
+    "char_count": 950,
+    "token_estimate": 237,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1575992
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p2_c5",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 2,
+    "chunk_index": 5,
+    "content": "2\n●\nperforming\nother\nduties\nassigned\nfrom\ntime\nto\ntime\nby\nthe\nBoard.\nD.\nDirector\nQualifications.\nThe\nNominating\nand\nGovernance\nCommittee,\nin\nconsultation\nwith\nthe\nChief\nExecutive\nOfficer(s),\nis\nresponsible\nfor\nidentifying\nand\nevaluating\nnominees\nfor\ndirector.\nThe\nNominating\nand\nGovernance\nCommittee\ndetermines\nperiodically,\nas\nappropriate,\nthe\ndesired\nBoard\nqualifications,\nexpertise\nand\ncharacteristics,\nincluding\nsuch\nfactors\nas\nbusiness\nexperience,\ndiversity\nas\nwell\nas\nskills\nand\nknowledge\nwith\nrespect\nto\ntechnology,\nfinance,\nmarketing,\nfinancial\nreporting\nand\nany\nother\nareas\nas\nmay\nbe\nexpected\nto\ncontribute\nto\nan\neffective\nBoard.\nWith\nrespect\nto\ndiversity,\nthe\nNominating\nand\nGovernance\nCommittee\nmay\nconsider\nsuch\nfactors\nas\ndifferences\nof\nviewpoint,\nprofessional\nexperience,\neducation,",
+    "char_count": 796,
+    "token_estimate": 199,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1577425
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p2_c6",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 2,
+    "chunk_index": 6,
+    "content": "spect\nto\ndiversity,\nthe\nNominating\nand\nGovernance\nCommittee\nmay\nconsider\nsuch\nfactors\nas\ndifferences\nof\nviewpoint,\nprofessional\nexperience,\neducation, ... spect\nto\ndiversity,\nthe\nNominating\nand\nGovernance\nCommittee\nmay\nconsider\nsuch\nfactors\nas\ndifferences\nof\nviewpoint,\nprofessional\nexperience,\neducation, ... international\nexperience,\nskill,\nand\nother\nindividual\nqualities\nand\nattributes\nthat\ncontribute\nto\nboard\nheterogeneity,\nincluding\ncharacteristics\nsuch\nas\nrace,\ngender,\nand\nnational\norigin.\nStockholders\nmay\nnominate\ndirectors\nfor\nelection\nat\nthe\nCompany’s\nannual\nmeeting\nof\nstockholders\nsubmitted\nin\naccordance\nwith\nthe\nBylaws,\nor\nmay\nrecommend\ncandidates\nto\nthe\nNominating\nand\nCorporate\nGovernance\nCommittee\nfor\nconsideration\nfor\nelection\nto\nthe\nBoard.\nThe\nNominating\nand\nGovernance\nCommittee\nevaluates\ncandidates\nrecommended\nby\nstockholders\nusing\nthe\nsame\ncriteria\nas\nfor\nother\ncandidates\nrecommended\nby\nits\nmembers,\nother\nmembers\nof\nthe\nBoard,\nor\nother\npersons.\nE.\nTerm\nand\nTenure.\nDirectors\nare\nelected\nby\nthe\nstockholders\nevery\nyear.\nThe\nBoard\ndoes\nnot\nbelieve\nspecific\nterm\nlimits\nor\nretirement",
+    "char_count": 1108,
+    "token_estimate": 277,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1577444
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p2_c7",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 2,
+    "chunk_index": 7,
+    "content": "other\npersons.\nE.\nTerm\nand\nTenure.\nDirectors\nare\nelected\nby\nthe\nstockholders\nevery\nyear.\nThe\nBoard\ndoes\nnot\nbelieve\nspecific\nterm\nlimits\nor\nretirement ... other\npersons.\nE.\nTerm\nand\nTenure.\nDirectors\nare\nelected\nby\nthe\nstockholders\nevery\nyear.\nThe\nBoard\ndoes\nnot\nbelieve\nspecific\nterm\nlimits\nor\nretirement ... requirements\nare\nnecessary,\nand\nvalues\nthe\nviewpoints\nof\nboth\nnew\nand\nexperienced\ndirectors,\nwho\nmay\nhave\ndeveloped\nin-depth\ninsight\ninto\nthe\nCompany\nthrough\ntheir\ntenure.\nF.\nService\non\nOther\nPublic\nCompany\nBoards.\nA\ndirector\nwho\nalso\nserves\nas\na\nChief\nExecutive\nOfficer\nof\nthe\nCompany\nshould\nnot\nserve\non\nmore\nthan\none\nboard\nof\nother\npublic\ncompanies\nin\naddition\nto\nthe\nCompany’s\nBoard.\nDirectors\nother\nthan\na\nChief\nExecutive\nOfficer\nof\nthe\nCompany\nshould\nnot\nserve\non\nmore\nthan\nfour\nboards\nof\nother\npublic\ncompanies\nin\naddition\nto\nthe\nCompany’s\nBoard.\nG.\nResignation.\nA\ndirector\nwho\nintends\nto\nresign\nor\nretire\nor\nrefuse\nto\nstand\nfor\nre-election\nto\nthe\nBoard\nmust\nsubmit\nwritten\nnotice\nto\nthe\nCompany.\nIf\na\nnominee\nfor\ndirector\nwho\nis\nan\nincumbent\ndirector\nis\nnot\nelected\nand\nno\nsuccessor\nhas\nbeen",
+    "char_count": 1109,
+    "token_estimate": 277,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1577458
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p2_c8",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 2,
+    "chunk_index": 8,
+    "content": "o\nthe\nBoard\nmust\nsubmit\nwritten\nnotice\nto\nthe\nCompany.\nIf\na\nnominee\nfor\ndirector\nwho\nis\nan\nincumbent\ndirector\nis\nnot\nelected\nand\nno\nsuccessor\nhas\nbeen ... o\nthe\nBoard\nmust\nsubmit\nwritten\nnotice\nto\nthe\nCompany.\nIf\na\nnominee\nfor\ndirector\nwho\nis\nan\nincumbent\ndirector\nis\nnot\nelected\nand\nno\nsuccessor\nhas\nbeen ... elected\nat\nsuch\nmeeting,\nthe\ndirector\nshall\npromptly\ntender\nhis\nor\nher\nresignation\nto\nthe\nBoard,\nand\nthe\nNominating\nand\nCommittee\nshall\nmake\na\nrecommendation\nto\nthe\nBoard\nas\nto\nwhether\nto\naccept\nor\nreject\nthe\ntendered\nresignation,\nor\nwhether\nother\naction\nshould\nbe\ntaken,\nall\nin\naccordance\nwith\nthe\nBylaws.\nFor\nresignations,\nthe\ndirector\nalso\nmust\nstate\nthat\nthe\ndirector\nhas\nno\ndisagreement\nwith\nthe\nCorporation’s\noperations,\npolicies\nor\npractices\nor,\nif\nthe\ndirector\nhas\nsuch\na\ndisagreement,\nthe\ndirector\nmust\ndescribe\nthe\ndisagreement.\nIII.\nBoard\nResponsibilities\nand\nProcedures\nA.\nBoard\nMeetings.\nThe\nBoard\nshall\nmeet\nin\nregularly\nscheduled\nmeetings\nthroughout\nthe\nyear\nand\nspecial\nmeetings\nas\nnecessary.\nDirectors\nare\nexpected\nto\nprepare\nfor,\nattend\nand\ncontribute\nto\nBoard\nand\napplicable",
+    "char_count": 1103,
+    "token_estimate": 275,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1577473
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p2_c9",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 2,
+    "chunk_index": 9,
+    "content": "d\nmeetings\nthroughout\nthe\nyear\nand\nspecial\nmeetings\nas\nnecessary.\nDirectors\nare\nexpected\nto\nprepare\nfor,\nattend\nand\ncontribute\nto\nBoard\nand\napplicable ... d\nmeetings\nthroughout\nthe\nyear\nand\nspecial\nmeetings\nas\nnecessary.\nDirectors\nare\nexpected\nto\nprepare\nfor,\nattend\nand\ncontribute\nto\nBoard\nand\napplicable ... committee\nmeetings.\nB.\nBoard\nMaterials.\nMeeting\nagenda\nand\nall\ninformation\nand\ndata\nimportant\nto\nthe\nBoard’s\nunderstanding\nof\nmatters\nto\nbe\ndiscussed\nat\na\nmeeting\nshall\nbe\ndistributed\nto\ndirectors\nin\nadvance.\nAs\nappropriate,\nmatters\nmay\nbe\ndiscussed\nat\na\nmeeting\nwithout\nadvance\ndistribution\nof\nwritten\nmaterials.\nC.\nAnnual\nMeeting\nAttendance.\nMembers\nof\nthe\nBoard\nof\nDirectors\nare\ninvited\nto\nattend\nthe\nCompany's\nAnnual\nMeeting;\nhowever,\nattendance\nis\nnot\nmandatory.\nD.\nAccess\nto\nManagement\nand\nEmployees.\nSenior\nleadership\nteam\nmembers\nregularly\nattend\nBoard\nmeetings\nto\nanswer\ndirectors’\nquestions.\nDirectors\nmay\nattend\nand\nobserve\nmanagement\nleadership\nmeetings.",
+    "char_count": 976,
+    "token_estimate": 244,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.157749
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p3_c10",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 3,
+    "chunk_index": 10,
+    "content": "3\nE.\nExecutive\nSessions.\nThe\nindependent\ndirectors\nof\nthe\nBoard\nwill\nregularly\nmeet\nin\nexecutive\nsession,\nwithout\nmanagement\npresent.\nIn\ngeneral,\nthe\nBoard\nreserves\ntime\nfollowing\neach\nregularly\nscheduled\nmeeting\nto\nallow\nthe\nindependent\ndirectors\nto\nmeet\nin\nexecutive\nsession.\nF.\nIndependent\nAdvisors.\nThe\nBoard\nand\neach\nof\nits\ncommittees\nshall\nhave\nthe\npower\nto\nretain\nindependent\nlegal,\nfinancial\nor\nother\nadvisors,\nas\nthey\nmay\ndeem\nnecessary,\nat\nthe\nCompany’s\nexpense,\nwithout\nfirst\nconsulting\nor\nobtaining\napproval\nfrom\nNetflix’s\nmanagement.\nIV.\nBoard\nCommittees.\nThe\nBoard\ncurrently\nhas\nthree\nstanding\ncommittees:\nthe\nAudit\nCommittee,\nthe\nCompensation\nCommittee\nand\nthe\nNominating\nand\nGovernance\nCommittee.\nThe\nBoard\nmay,\nfrom\ntime\nto\ntime,\nadd\nnew\ncommittees\nas\nnecessary.All\nof\nthe\nmembers",
+    "char_count": 797,
+    "token_estimate": 199,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1578548
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p3_c11",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 3,
+    "chunk_index": 11,
+    "content": "mpensation\nCommittee\nand\nthe\nNominating\nand\nGovernance\nCommittee.\nThe\nBoard\nmay,\nfrom\ntime\nto\ntime,\nadd\nnew\ncommittees\nas\nnecessary.All\nof\nthe\nmembers ... mpensation\nCommittee\nand\nthe\nNominating\nand\nGovernance\nCommittee.\nThe\nBoard\nmay,\nfrom\ntime\nto\ntime,\nadd\nnew\ncommittees\nas\nnecessary.All\nof\nthe\nmembers ... of\nthe\nAudit\nCommittee,\nCompensation\nCommittee\nand\nNominating\nand\nGovernance\nCommittee\nwill\nbe\nindependent\ndirectors\nunder\nthe\ncriteria\nfor\nindependence\nrequired\nby\nlaw\nand\nNasdaq\nand\nmeet\nthe\nmembership\ncriteria\nset\nforth\nin\neach\ncommittee’s\nrespective\ncharter.\nThe\nmembers\nand\nchairperson\nof\neach\nof\nthe\ncommittees\nwill\nbe\nappointed\nby\nthe\nBoard,\ntaking\ninto\naccount\nthe\nrecommendations\nof\nthe\nNominating\nand\nGovernance\nCommittee.The\nBoard\nshall\napprove\neach\ncommittee’s\ncharter,\nand\neach\ncommittee\nwill,\nfrom\ntime\nto\ntime,\nreview\nand\nassess\nthe\nadequacy\nof\nits\ncharter\nand\nrecommend\nany\nchanges\nto\nthe\nBoard.\nV.\nStock\nOwnership\nGuidelines.\nThe\nBoard\nhas\nestablished\nstock\nownership\nguidelines\nfor\nexecutive\nofficers,\nwhich\nthe\nCompensation\nCommittee\nreviews\nand\noversees\nfor\ncompliance.\nVI.",
+    "char_count": 1103,
+    "token_estimate": 275,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.1578562
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p3_c12",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 3,
+    "chunk_index": 12,
+    "content": "The\nBoard\nhas\nestablished\nstock\nownership\nguidelines\nfor\nexecutive\nofficers,\nwhich\nthe\nCompensation\nCommittee\nreviews\nand\noversees\nfor\ncompliance.\nVI. ... The\nBoard\nhas\nestablished\nstock\nownership\nguidelines\nfor\nexecutive\nofficers,\nwhich\nthe\nCompensation\nCommittee\nreviews\nand\noversees\nfor\ncompliance.\nVI. ... Director\nCompensation.\nThe\nCompensation\nCommittee\nperiodically\nreviews\nthe\nform\nand\namount\nof\ncompensation\npaid\nto\nnon-employee\ndirectors\nand\nmakes\nrecommendations\nto\nthe\nBoard\nfor\nappropriate\nchanges.\nDirectors\nwho\nare\nalso\nemployees\nof\nthe\nCompany,\nincluding\na\nsubsidiary,\nshall\nreceive\nno\nadditional\ncompensation\nfor\ntheir\nservices\nas\ndirectors.\nVII.\nDirector\nOrientation.\nThe\nCompany\noffers\nnew\ndirectors\ninformation\nand\naccess\nto\nsenior\nmanagement\nto\nbecome\nfamiliar\nwith\nthe\nCompany,\nindustry\nand\nthe\nBoard\nto\nassist\nthem\nin\ntheir\nduties.\nVIII.\nManagement\nEvaluation\nand\nSuccession\nPlanning.\nThe\nindependent\ndirectors\nof\nthe\nBoard\nshall\nperiodically\nevaluate\nthe\nperformance\nof\nand\ndiscuss\nthe\nsuccession\nplanning\nfor\nthe\nchief\nexecutive\nofficer(s)\nand,\nas\nappropriate,\nother\nmembers\nof\nsenior",
+    "char_count": 1109,
+    "token_estimate": 277,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.157858
+  },
+  {
+    "chunk_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf_p3_c13",
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "page_number": 3,
+    "chunk_index": 13,
+    "content": "ically\nevaluate\nthe\nperformance\nof\nand\ndiscuss\nthe\nsuccession\nplanning\nfor\nthe\nchief\nexecutive\nofficer(s)\nand,\nas\nappropriate,\nother\nmembers\nof\nsenior ... ically\nevaluate\nthe\nperformance\nof\nand\ndiscuss\nthe\nsuccession\nplanning\nfor\nthe\nchief\nexecutive\nofficer(s)\nand,\nas\nappropriate,\nother\nmembers\nof\nsenior ... management.\nIX.\nBoard\nEvaluation.\nThe\nBoard\nand\neach\ncommittee\nshall\nperiodically\nconduct\na\nself-evaluation\nof\nthe\nperformance\nand\nfunctioning\nof\nthe\nBoard\nand\neach\nof\nits\nmembers.\nThe\nNominating\nand\nGovernance\nCommittee\nis\nresponsible\nfor\noverseeing\nthe\nevaluation.\nX.\nEthics\nand\nConflicts\nof\nInterest.\nThe\nBoard\nhas\nadopted\na\nCode\nof\nEthics\nto\nprovide\nguidelines\nfor\nthe\nethical\nconduct\nof\nthe\nCompany’s\ndirectors,\nofficers\nand\nother\nemployees.\nXI.\nCommunication\nwith\nStakeholders.\nThe\nBoard\nmakes\navailable\nan\nemail\nlink\non\nits\nInvestor\nRelations\nwebsite\nto\nwhich\nstockholders\nmay\nsend\ncommunications\nto\nthe\nBoard.",
+    "char_count": 927,
+    "token_estimate": 231,
+    "metadata": {
+      "total_pages": 3,
+      "file_type": "pdf"
+    },
+    "created_at": 1790836373.157859
+  },
+  {
+    "chunk_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md_p1_c0",
+    "doc_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md",
+    "doc_name": "Cloud_Infrastructure_API_Gateway_Specification.md",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "# Enterprise Cloud Infrastructure & API Gateway Technical Specification\nDocument Version: 4.2.1\nStatus: Production Approved\nClassification: Internal Enterprise Technical Specification\n\n## 1. Overview & Architecture\nThe Enterprise API Gateway acts as the unified reverse proxy, traffic orchestrator, and security perimeter for all microservices in the global hybrid cloud infrastructure.",
+    "char_count": 386,
+    "token_estimate": 96,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.4732018
+  },
+  {
+    "chunk_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md_p1_c1",
+    "doc_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md",
+    "doc_name": "Cloud_Infrastructure_API_Gateway_Specification.md",
+    "page_number": 1,
+    "chunk_index": 1,
+    "content": "teway acts as the unified reverse proxy, traffic orchestrator, and security perimeter for all microservices in the global hybrid cloud infrastructure. ... ## 2. Authentication & Authorization Protocols\nAll incoming requests must authenticate using dual-layer validation:\n- **Layer 1 (Transport Identity)**: Mutual TLS (mTLS 1.3) with RSA 4096-bit or ECDSA P-384 certificates.\n- **Layer 2 (Application Credential)**: Bearer JWT in the `Authorization` header signed with RS256 by the corporate Okta/OIDC identity provider, combined with an active tenant identifier in the `X-Enterprise-Tenant-ID` header.\n- Token Expiration: Bearer tokens must have an expiration (`exp`) timestamp no longer than 15 minutes (900 seconds) from issuance.\n- Revocation Checking: Real-time validation is performed against an in-memory Redis cluster with fallback to the distributed token blacklist.",
+    "char_count": 875,
+    "token_estimate": 218,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.4732077
+  },
+  {
+    "chunk_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md_p1_c2",
+    "doc_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md",
+    "doc_name": "Cloud_Infrastructure_API_Gateway_Specification.md",
+    "page_number": 1,
+    "chunk_index": 2,
+    "content": "ssuance.\n- Revocation Checking: Real-time validation is performed against an in-memory Redis cluster with fallback to the distributed token blacklist. ... ## 3. Rate Limiting & Traffic Management\nRate limits are enforced at the API Gateway level using the distributed Leaky Bucket and Token Bucket algorithms:\n| Tier Level | Standard Rate Limit | Burst Allowance | Penalty Window |\n| :--- | :--- | :--- | :--- |\n| Free / Trial | 100 req/min | 150 req/min | 5 minutes block |\n| Developer | 1,000 req/min | 1,500 req/min | 2 minutes block |\n| Business Tier | 5,000 req/min | 7,500 req/min | 60 seconds throttle |\n| Enterprise Tier | 10,000 req/min | 15,000 req/min | Dynamic backoff |",
+    "char_count": 682,
+    "token_estimate": 170,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.4732106
+  },
+  {
+    "chunk_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md_p1_c3",
+    "doc_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md",
+    "doc_name": "Cloud_Infrastructure_API_Gateway_Specification.md",
+    "page_number": 1,
+    "chunk_index": 3,
+    "content": "lock |\n| Business Tier | 5,000 req/min | 7,500 req/min | 60 seconds throttle |\n| Enterprise Tier | 10,000 req/min | 15,000 req/min | Dynamic backoff | ... When a client breaches rate limits, the gateway returns HTTP status `429 Too Many Requests` along with the standard response payload:\n```json\n{\n  \"error_code\": \"ERR_4029_RATE_LIMIT_EXCEEDED\",\n  \"message\": \"Maximum request threshold surpassed for current tier\",\n  \"retry_after_seconds\": 60,\n  \"quota_reset_epoch\": 1759283400\n}\n```",
+    "char_count": 484,
+    "token_estimate": 121,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.4732125
+  },
+  {
+    "chunk_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md_p1_c4",
+    "doc_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md",
+    "doc_name": "Cloud_Infrastructure_API_Gateway_Specification.md",
+    "page_number": 1,
+    "chunk_index": 4,
+    "content": "T_EXCEEDED\",\n  \"message\": \"Maximum request threshold surpassed for current tier\",\n  \"retry_after_seconds\": 60,\n  \"quota_reset_epoch\": 1759283400\n}\n``` ... ## 4. Timeout & Circuit Breaker Configurations\n- **Standard REST Endpoints**: Upstream read timeout is strictly set to 30,000 milliseconds (30 seconds).\n- **Asynchronous Batch Endpoints**: Upstream timeout is capped at 300,000 milliseconds (5 minutes).\n- **Circuit Breaker Threshold**: If the downstream service error rate (5xx status codes) exceeds 25% across a 60-second rolling window with a minimum sample size of 50 requests, the circuit breaker transitions to `OPEN` state for 30 seconds.\n- During the `OPEN` state, all incoming traffic receives immediate HTTP 503 fallback responses without stressing the failing backend service.",
+    "char_count": 791,
+    "token_estimate": 197,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.4732137
+  },
+  {
+    "chunk_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md_p1_c5",
+    "doc_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md",
+    "doc_name": "Cloud_Infrastructure_API_Gateway_Specification.md",
+    "page_number": 1,
+    "chunk_index": 5,
+    "content": "seconds.\n- During the `OPEN` state, all incoming traffic receives immediate HTTP 503 fallback responses without stressing the failing backend service. ... ## 5. Caching & Edge Optimization\n- GET endpoints with idempotent responses may utilize CloudFront and Gateway edge caching by supplying the `Cache-Control: public, max-age=300` header.\n- Invalidation can be triggered via webhook at `/api/v1/gateway/cache/purge` requiring Admin privileges.",
+    "char_count": 445,
+    "token_estimate": 111,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.4732156
+  },
+  {
+    "chunk_id": "sample_DevOps_Incident_Response_Runbook.md_p1_c0",
+    "doc_id": "sample_DevOps_Incident_Response_Runbook.md",
+    "doc_name": "DevOps_Incident_Response_Runbook.md",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "# Enterprise DevOps Incident Response Runbook\nDocument Ref: SRE-RUNBOOK-2026-V3\nOwner: Site Reliability Engineering & Platform Security Team\nLast Review: 2026-08-15\n\n## 1. Severity Levels & SLA Targets\nIncidents are categorized into four severity classifications based on user impact and financial risk:",
+    "char_count": 303,
+    "token_estimate": 75,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.5185473
+  },
+  {
+    "chunk_id": "sample_DevOps_Incident_Response_Runbook.md_p1_c1",
+    "doc_id": "sample_DevOps_Incident_Response_Runbook.md",
+    "doc_name": "DevOps_Incident_Response_Runbook.md",
+    "page_number": 1,
+    "chunk_index": 1,
+    "content": "2026-08-15\n\n## 1. Severity Levels & SLA Targets\nIncidents are categorized into four severity classifications based on user impact and financial risk: ... | Severity | Definition | Initial Response SLA | Status Update Cadence | Post-Mortem Required? |\n| :--- | :--- | :--- | :--- | :--- |\n| **SEV-1 (Critical)** | Core service outage affecting >10% of global customers or critical data loss. | Within 15 minutes | Every 15 minutes | Yes, within 48 hours |\n| **SEV-2 (Major)** | Major functionality impaired with no viable workaround; high latency (>2s). | Within 30 minutes | Every 30 minutes | Yes, within 72 hours |\n| **SEV-3 (Moderate)** | Non-critical component degraded; workaround exists. | Within 2 hours | Every 2 hours | Optional |\n| **SEV-4 (Minor)** | Minor bug or cosmetic defect with minimal customer disruption. | Within 24 hours | On resolution | No |",
+    "char_count": 865,
+    "token_estimate": 216,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.51855
+  },
+  {
+    "chunk_id": "sample_DevOps_Incident_Response_Runbook.md_p1_c2",
+    "doc_id": "sample_DevOps_Incident_Response_Runbook.md",
+    "doc_name": "DevOps_Incident_Response_Runbook.md",
+    "page_number": 1,
+    "chunk_index": 2,
+    "content": "ery 2 hours | Optional |\n| **SEV-4 (Minor)** | Minor bug or cosmetic defect with minimal customer disruption. | Within 24 hours | On resolution | No | ... ## 2. Incident Command System (ICS) Roles\nWhen a SEV-1 or SEV-2 is triggered, the following roles are assigned immediately:\n1. **Incident Commander (IC)**: Holds single-threaded authority on all tactical decisions. Does not write code or touch infrastructure; directs the team.\n2. **Operations Lead**: Manages hands-on troubleshooting, runs rollbacks, or applies configuration toggles.\n3. **Communications Lead**: Updates executive leadership, customer support, and the public status page (`status.enterprise.corp`).\n4. **Scribe**: Logs every timestamped action, hypothesis, and command executed in the incident war room.",
+    "char_count": 776,
+    "token_estimate": 194,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.5185518
+  },
+  {
+    "chunk_id": "sample_DevOps_Incident_Response_Runbook.md_p1_c3",
+    "doc_id": "sample_DevOps_Incident_Response_Runbook.md",
+    "doc_name": "DevOps_Incident_Response_Runbook.md",
+    "page_number": 1,
+    "chunk_index": 3,
+    "content": "ublic status page (`status.enterprise.corp`).\n4. **Scribe**: Logs every timestamped action, hypothesis, and command executed in the incident war room. ... ## 3. Communication Protocols\n- Dedicated Slack Channel: `#incident-war-room-[incident-number]`\n- Zoom Bridge: Link automatically generated in the Slack header via PagerDuty bot.\n- Status Page Updates: Must be published within 20 minutes of SEV-1 declaration using standardized pre-approved templates.",
+    "char_count": 456,
+    "token_estimate": 114,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.5185533
+  },
+  {
+    "chunk_id": "sample_DevOps_Incident_Response_Runbook.md_p1_c4",
+    "doc_id": "sample_DevOps_Incident_Response_Runbook.md",
+    "doc_name": "DevOps_Incident_Response_Runbook.md",
+    "page_number": 1,
+    "chunk_index": 4,
+    "content": "k header via PagerDuty bot.\n- Status Page Updates: Must be published within 20 minutes of SEV-1 declaration using standardized pre-approved templates. ... ## 4. Disaster Recovery (DR) Metrics\n- **RPO (Recovery Point Objective)**: Maximum allowable data loss window is 15 minutes. Backups are snapshotted across multi-region object storage every 10 minutes.\n- **RTO (Recovery Time Objective)**: Maximum downtime allowable to restore critical operations is 60 minutes for tier-1 services.\n- Multi-Region Failover: Automated DNS route switching via Route53 health checks initiates failover to the secondary region if primary region health probes fail for 3 consecutive checks.",
+    "char_count": 673,
+    "token_estimate": 168,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.5185547
+  },
+  {
+    "chunk_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf_p1_c0",
+    "doc_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf",
+    "doc_name": "Enterprise_Security_and_Access_Control_Policy.pdf",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "Enterprise Security & Access Control Policy\nPolicy ID: SEC-POL-2026-09 | Effective Date: October 1, 2026 | Classification: Confidential Internal\n1. Purpose and Scope\nThis policy defines mandatory requirements for user identity authentication, credential hygiene, role-based\naccess control (RBAC), and hardware security compliance across all corporate systems, production clusters,\nand cloud environments. Compliance is mandatory for all full-time employees, contractors, and third-party\nvendors.\n2. Identity, Credential & Password Hygiene Standards\nAll corporate identities must adhere to strict zero-trust credential rules:\nParameter\nMandatory Requirement\nEnforcement Mechanism\nMinimum Length\n16 characters\nOkta Identity Engine filter\nComplexity\nUpper, lower, digits, special characters",
+    "char_count": 787,
+    "token_estimate": 196,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.570518
+  },
+  {
+    "chunk_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf_p1_c1",
+    "doc_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf",
+    "doc_name": "Enterprise_Security_and_Access_Control_Policy.pdf",
+    "page_number": 1,
+    "chunk_index": 1,
+    "content": "ndatory Requirement\nEnforcement Mechanism\nMinimum Length\n16 characters\nOkta Identity Engine filter\nComplexity\nUpper, lower, digits, special characters ... ndatory Requirement\nEnforcement Mechanism\nMinimum Length\n16 characters\nOkta Identity Engine filter\nComplexity\nUpper, lower, digits, special characters ... Automated regex check\nRotation Schedule\nMandatory every 90 days\nAutomated account lockout warning\nMFA Requirement\nFIDO2 WebAuthn Hardware Key or Biometrics\nSMS/Voice call MFA prohibited\nLockout Threshold\n5 consecutive failed attempts\n30-minute lock + Security alert\n3. Zero Trust Remote Work & Network Perimeter\nDirect SSH or RDP exposure to the public Internet is strictly forbidden. All engineers and staff accessing\ninternal networks must route through the Corporate WireGuard VPN mesh with split-tunneling disabled for\ninternal CIDR ranges (10.0.0.0/8). Session lifetimes are capped at 8 hours, requiring automated\nre-authentication.\n4. Data Classification & Protection Tiers\nTier\nClassification\nHandling & Storage Requirements\nTier 1\nPublic\nNo encryption required at rest. Freely sharable.",
+    "char_count": 1104,
+    "token_estimate": 276,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.5705204
+  },
+  {
+    "chunk_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf_p1_c2",
+    "doc_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf",
+    "doc_name": "Enterprise_Security_and_Access_Control_Policy.pdf",
+    "page_number": 1,
+    "chunk_index": 2,
+    "content": "a Classification & Protection Tiers\nTier\nClassification\nHandling & Storage Requirements\nTier 1\nPublic\nNo encryption required at rest. Freely sharable. ... a Classification & Protection Tiers\nTier\nClassification\nHandling & Storage Requirements\nTier 1\nPublic\nNo encryption required at rest. Freely sharable. ... Tier 2\nInternal\nAES-256 encryption at rest. Internal staff access only.\nTier 3\nConfidential\nKMS Customer-Managed Keys (CMEK), audit logging required.\nTier 4\nRestricted / PII\nField-level tokenization, strict RBAC, data masking on display.\n5. Violation Penalties and Reporting\nSuspected security compromises, lost hardware tokens, or anomalous access events must be reported to the\nSecurity Operations Center (SOC) at security-incident@enterprise.corp within 15 minutes of discovery. Willful",
+    "char_count": 799,
+    "token_estimate": 199,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.5705218
+  },
+  {
+    "chunk_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf_p2_c3",
+    "doc_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf",
+    "doc_name": "Enterprise_Security_and_Access_Control_Policy.pdf",
+    "page_number": 2,
+    "chunk_index": 3,
+    "content": "non-compliance is grounds for immediate credential revocation and disciplinary review.",
+    "char_count": 86,
+    "token_estimate": 21,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.5705252
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.md_p1_c0",
+    "doc_id": "sample_Mummalar_Raj_Resume.md",
+    "doc_name": "Mummalar_Raj_Resume.md",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "# Mummalar Raj A - Professional Resume\nChennai, Tamil Nadu | +91 6382061572 | mummalarraj27@gmail.com | linkedin.com/in/mummalar-raj-515293297\n\n## Professional Summary\nA motivated frontend and full-stack developer fresher seeking an entry-level opportunity to apply skills in HTML, CSS, JavaScript, React.js, Python, and Django to design and develop responsive, scalable web applications. Successfully built projects including Cryptocurrency Tracker, AI-Language Identifier, Smart Health System, and Enterprise RAG Knowledge Base. Eager to learn, grow, and contribute to dynamic engineering teams.",
+    "char_count": 597,
+    "token_estimate": 149,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.6052408
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.md_p1_c1",
+    "doc_id": "sample_Mummalar_Raj_Resume.md",
+    "doc_name": "Mummalar_Raj_Resume.md",
+    "page_number": 1,
+    "chunk_index": 1,
+    "content": "er, AI-Language Identifier, Smart Health System, and Enterprise RAG Knowledge Base. Eager to learn, grow, and contribute to dynamic engineering teams. ... ## Technical Skills\n- **Programming Languages**: JavaScript (ES6+), Python\n- **Frontend Technologies**: HTML5, CSS3, JavaScript, React.js, Tailwind CSS, Bootstrap\n- **Backend Technologies**: Django, Django REST Framework, FastAPI\n- **Databases**: MySQL, MongoDB, SQLite, Vector Databases\n- **Full-Stack Concepts**: RESTful APIs, CRUD Operations, Authentication & Authorization, Client-Server Architecture, Vector Retrieval (RAG)\n- **Web Technologies**: API Integration, JSON Handling, Responsive Web Design\n- **Tools & Platforms**: Git, GitHub, Visual Studio Code, Postman, Vite\n- **Core Engineering Skills**: Debugging, Performance Optimization, Deployment Basics, Clean Architecture",
+    "char_count": 839,
+    "token_estimate": 209,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.6052434
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.md_p1_c2",
+    "doc_id": "sample_Mummalar_Raj_Resume.md",
+    "doc_name": "Mummalar_Raj_Resume.md",
+    "page_number": 1,
+    "chunk_index": 2,
+    "content": "t, GitHub, Visual Studio Code, Postman, Vite\n- **Core Engineering Skills**: Debugging, Performance Optimization, Deployment Basics, Clean Architecture ... ## Internship Experience\n### BDreamz Global Solutions – Chennai\n**Role**: Full Stack Developer Intern\n**Duration**: Feb 2026 – Present\n- 3-month intensive internship building end-to-end web applications using HTML, CSS, JavaScript, React, and backend technologies.\n- Focused on creating responsive user interfaces, secure server-side logic, and efficient database integration.\n- Delivered scalable, user-friendly client solutions with RESTful API communication.",
+    "char_count": 616,
+    "token_estimate": 154,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.6052449
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.md_p1_c3",
+    "doc_id": "sample_Mummalar_Raj_Resume.md",
+    "doc_name": "Mummalar_Raj_Resume.md",
+    "page_number": 1,
+    "chunk_index": 3,
+    "content": "es, secure server-side logic, and efficient database integration.\n- Delivered scalable, user-friendly client solutions with RESTful API communication. ... ## Featured Engineering Projects\n### 1. Enterprise RAG & Knowledge Base (Full-Stack AI Project)\n**Tech Stack**: React.js, Tailwind CSS, FastAPI, Python, Vector Database, Hybrid Search (Dense + BM25)\n- Architected an enterprise-grade private knowledge base and QA system answering questions strictly from internal documents (PDFs, specs, manuals) without hallucinating.\n- Implemented multi-format ingestion (pypdf), recursive character chunking, and Reciprocal Rank Fusion (RRF) vector search.\n- Built a 4-layer guardrail pipeline: prompt injection filtering, PII masking, relevance threshold gating, and post-generation citation verification.\n- Designed an interactive React dashboard with clickable source citation drawers, confidence scoring, and chunk inspection.",
+    "char_count": 921,
+    "token_estimate": 230,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.6052463
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.md_p1_c4",
+    "doc_id": "sample_Mummalar_Raj_Resume.md",
+    "doc_name": "Mummalar_Raj_Resume.md",
+    "page_number": 1,
+    "chunk_index": 4,
+    "content": "ion citation verification.\n- Designed an interactive React dashboard with clickable source citation drawers, confidence scoring, and chunk inspection. ... ### 2. Crypto Tracker – Frontend Application\n**Tech Stack**: HTML5, CSS3, JavaScript (ES6+), React.js\n- Built a responsive cryptocurrency tracking application using HTML, CSS, and modern JavaScript.\n- Implemented live crypto price tracking with historical daily, monthly, and yearly trend analysis.\n- Integrated an AI chatbot assistant to support users with market insights.\n- Developed features for income tracking, expense logging, and real-time balance calculations.",
+    "char_count": 624,
+    "token_estimate": 156,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.6052475
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.md_p1_c5",
+    "doc_id": "sample_Mummalar_Raj_Resume.md",
+    "doc_name": "Mummalar_Raj_Resume.md",
+    "page_number": 1,
+    "chunk_index": 5,
+    "content": "hatbot assistant to support users with market insights.\n- Developed features for income tracking, expense logging, and real-time balance calculations. ... ### 3. Smart Health System – Full Stack Application\n**Tech Stack**: Python, Django, Django REST Framework, React.js\n- Developed a full-stack Task Flow and health management application using Django REST Framework with a modular, scalable architecture.\n- Built a responsive Single Page Application (SPA) with reusable React components.\n- Implemented interactive project dashboards, task boards, and team collaboration features.\n\n## Education\n### Mahendra College of Engineering, Salem, Tamil Nadu\n**Degree**: B.Tech – Artificial Intelligence and Data Science\n**Duration**: Nov 2022 – May 2026\n**CGPA**: 7.4 / 10.0",
+    "char_count": 767,
+    "token_estimate": 191,
+    "metadata": {
+      "file_type": ".md"
+    },
+    "created_at": 1790850680.605249
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.pdf_p1_c0",
+    "doc_id": "sample_Mummalar_Raj_Resume.pdf",
+    "doc_name": "Mummalar_Raj_Resume.pdf",
+    "page_number": 1,
+    "chunk_index": 0,
+    "content": "Mummalar Raj A\nChennai, Tamil Nadu  |  +91 6382061572  |  mummalarraj27@gmail.com  |  linkedin.com/in/mummalar-raj-515293297\nPROFESSIONAL SUMMARY\nA motivated frontend and full-stack developer fresher seeking an entry-level opportunity to apply skills in HTML, CSS, JavaScript,\nReact.js, Python, and Django to design and develop responsive, scalable web applications. Successfully built projects including\nCryptocurrency Tracker, Smart Health System, and an Enterprise RAG Knowledge Base. Eager to learn, grow, and contribute to\ndynamic software engineering teams.\nTECHNICAL SKILLS\nProgramming Languages:\nJavaScript (ES6+), Python\nFrontend Technologies:\nHTML5, CSS3, JavaScript, React.js, Tailwind CSS, Bootstrap\nBackend Technologies:\nDjango, Django REST Framework, FastAPI\nDatabases & Vector Stores:",
+    "char_count": 799,
+    "token_estimate": 199,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.6741118
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.pdf_p1_c1",
+    "doc_id": "sample_Mummalar_Raj_Resume.pdf",
+    "doc_name": "Mummalar_Raj_Resume.pdf",
+    "page_number": 1,
+    "chunk_index": 1,
+    "content": "es:\nHTML5, CSS3, JavaScript, React.js, Tailwind CSS, Bootstrap\nBackend Technologies:\nDjango, Django REST Framework, FastAPI\nDatabases & Vector Stores: ... es:\nHTML5, CSS3, JavaScript, React.js, Tailwind CSS, Bootstrap\nBackend Technologies:\nDjango, Django REST Framework, FastAPI\nDatabases & Vector Stores: ... MySQL, MongoDB, SQLite, Hybrid Vector Store (Dense + BM25)\nFull Stack Concepts:\nRESTful APIs, CRUD Operations, Authentication & Authorization, Client-Server Architecture,\nRAG Pipeline\nTools & Platforms:\nGit, GitHub, Visual Studio Code, Postman, Vite, Docker\nINTERNSHIP EXPERIENCE\nBDreamz Global Solutions – Chennai   |   Feb 2026 – Present\nRole: Full Stack Developer Intern\n Built end-to-end web applications using HTML, CSS, JavaScript, React, and backend technologies during a 3-month practical\ninternship.\n Designed responsive, accessible user interfaces, implemented server-side logic, and handled database integration.\n Delivered scalable, user-friendly solutions with robust client-server API workflows.\nFEATURED PROJECTS\nEnterprise RAG & Knowledge Base (Full-Stack AI Application)",
+    "char_count": 1100,
+    "token_estimate": 275,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.674114
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.pdf_p1_c2",
+    "doc_id": "sample_Mummalar_Raj_Resume.pdf",
+    "doc_name": "Mummalar_Raj_Resume.pdf",
+    "page_number": 1,
+    "chunk_index": 2,
+    "content": "alable, user-friendly solutions with robust client-server API workflows.\nFEATURED PROJECTS\nEnterprise RAG & Knowledge Base (Full-Stack AI Application) ... alable, user-friendly solutions with robust client-server API workflows.\nFEATURED PROJECTS\nEnterprise RAG & Knowledge Base (Full-Stack AI Application) ... Tech Stack: React.js, Tailwind CSS, FastAPI, Python, Vector DB (Cosine + BM25), Anti-Hallucination Guardrails\n Built a zero-hallucination RAG knowledge base for enterprise documents (PDF, Markdown, CSV, TXT) with automatic page-level\ncitations.\n Implemented hybrid retrieval using Reciprocal Rank Fusion (RRF) and 4-layer guardrails (Prompt Injection check, PII masking,\nRelevance Gate, and Faithfulness scoring).\nCrypto Tracker – Frontend Application\nTech Stack: HTML5, CSS3, JavaScript (ES6+), React.js\n Developed a responsive cryptocurrency tracker with live pricing and historical trend tracking across days, months, and years.\n Integrated an AI chatbot assistant and built balance management features for income, expense, and real-time calculations.",
+    "char_count": 1068,
+    "token_estimate": 267,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.6741157
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.pdf_p1_c3",
+    "doc_id": "sample_Mummalar_Raj_Resume.pdf",
+    "doc_name": "Mummalar_Raj_Resume.pdf",
+    "page_number": 1,
+    "chunk_index": 3,
+    "content": "s days, months, and years.\n Integrated an AI chatbot assistant and built balance management features for income, expense, and real-time calculations. ... s days, months, and years.\n Integrated an AI chatbot assistant and built balance management features for income, expense, and real-time calculations. ... Smart Health System – Full Stack Application\nTech Stack: Python, Django, Django REST Framework, React.js\n Built a full-stack task flow and health management system with modular Django REST Framework architecture.\n Created a responsive React SPA featuring reusable components, project boards, and team collaboration workflows.\nEDUCATION\nMahendra College of Engineering, Salem, Tamil Nadu   |   Nov 2022 – May 2026",
+    "char_count": 724,
+    "token_estimate": 181,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.6741168
+  },
+  {
+    "chunk_id": "sample_Mummalar_Raj_Resume.pdf_p2_c4",
+    "doc_id": "sample_Mummalar_Raj_Resume.pdf",
+    "doc_name": "Mummalar_Raj_Resume.pdf",
+    "page_number": 2,
+    "chunk_index": 4,
+    "content": "B.Tech in Artificial Intelligence and Data Science  |  CGPA: 7.4 / 10.0",
+    "char_count": 71,
+    "token_estimate": 17,
+    "metadata": {
+      "total_pages": 2,
+      "file_type": "pdf"
+    },
+    "created_at": 1790850680.6741202
+  }
+]

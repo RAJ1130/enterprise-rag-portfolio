@@ -1,0 +1,119 @@
+{
+  "4cb37c63_test_travel_policy.txt": {
+    "doc_id": "4cb37c63_test_travel_policy.txt",
+    "doc_name": "test_travel_policy.txt",
+    "chunk_count": 1,
+    "created_at": 1790790513.9785633,
+    "metadata": {
+      "filename": "test_travel_policy.txt",
+      "file_size": 237,
+      "page_count": 1,
+      "chunk_count": 1,
+      "upload_time": 1790790513.978572,
+      "file_type": ".txt"
+    }
+  },
+  "2ceb3d99_README.md": {
+    "doc_id": "2ceb3d99_README.md",
+    "doc_name": "README.md",
+    "chunk_count": 9,
+    "created_at": 1790792229.641915,
+    "metadata": {
+      "filename": "README.md",
+      "file_size": 5684,
+      "page_count": 1,
+      "chunk_count": 9,
+      "upload_time": 1790792229.641958,
+      "file_type": ".md"
+    }
+  },
+  "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf": {
+    "doc_id": "c8e85917_Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "doc_name": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+    "chunk_count": 14,
+    "created_at": 1790836373.1575863,
+    "metadata": {
+      "filename": "Corporate-Governance-Guidelines-2025-Revisions-Final-d88dc9.pdf",
+      "file_size": 98065,
+      "page_count": 3,
+      "chunk_count": 14,
+      "upload_time": 1790836373.1578631,
+      "file_type": ".pdf"
+    }
+  },
+  "sample_Cloud_Infrastructure_API_Gateway_Specification.md": {
+    "doc_id": "sample_Cloud_Infrastructure_API_Gateway_Specification.md",
+    "doc_name": "Cloud_Infrastructure_API_Gateway_Specification.md",
+    "chunk_count": 6,
+    "created_at": 1790850680.4732018,
+    "metadata": {
+      "filename": "Cloud_Infrastructure_API_Gateway_Specification.md",
+      "file_size": 2899,
+      "page_count": 1,
+      "chunk_count": 6,
+      "upload_time": 1790850680.4741006,
+      "file_type": ".md",
+      "is_sample": true
+    }
+  },
+  "sample_DevOps_Incident_Response_Runbook.md": {
+    "doc_id": "sample_DevOps_Incident_Response_Runbook.md",
+    "doc_name": "DevOps_Incident_Response_Runbook.md",
+    "chunk_count": 5,
+    "created_at": 1790850680.5185473,
+    "metadata": {
+      "filename": "DevOps_Incident_Response_Runbook.md",
+      "file_size": 2463,
+      "page_count": 1,
+      "chunk_count": 5,
+      "upload_time": 1790850680.5186522,
+      "file_type": ".md",
+      "is_sample": true
+    }
+  },
+  "sample_Enterprise_Security_and_Access_Control_Policy.pdf": {
+    "doc_id": "sample_Enterprise_Security_and_Access_Control_Policy.pdf",
+    "doc_name": "Enterprise_Security_and_Access_Control_Policy.pdf",
+    "chunk_count": 4,
+    "created_at": 1790850680.570518,
+    "metadata": {
+      "filename": "Enterprise_Security_and_Access_Control_Policy.pdf",
+      "file_size": 4264,
+      "page_count": 2,
+      "chunk_count": 4,
+      "upload_time": 1790850680.5706408,
+      "file_type": ".pdf",
+      "is_sample": true
+    }
+  },
+  "sample_Mummalar_Raj_Resume.md": {
+    "doc_id": "sample_Mummalar_Raj_Resume.md",
+    "doc_name": "Mummalar_Raj_Resume.md",
+    "chunk_count": 6,
+    "created_at": 1790850680.6052408,
+    "metadata": {
+      "filename": "Mummalar_Raj_Resume.md",
+      "file_size": 3612,
+      "page_count": 1,
+      "chunk_count": 6,
+      "upload_time": 1790850680.6052902,
+      "file_type": ".md",
+      "is_sample": true
+    }
+  },
+  "sample_Mummalar_Raj_Resume.pdf": {
+    "doc_id": "sample_Mummalar_Raj_Resume.pdf",
+    "doc_name": "Mummalar_Raj_Resume.pdf",
+    "chunk_count": 5,
+    "created_at": 1790850680.6741118,
+    "metadata": {
+      "filename": "Mummalar_Raj_Resume.pdf",
+      "file_size": 4944,
+      "page_count": 2,
+      "chunk_count": 5,
+      "upload_time": 1790850680.6742263,
+      "file_type": ".pdf",
+      "is_sample": true
+    }
+  }
+}

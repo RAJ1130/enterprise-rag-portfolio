@@ -1,0 +1,19 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Large binaries & data cache
+cloudflared.exe
+*.log
+
+# Sensitive environment files
+.env
